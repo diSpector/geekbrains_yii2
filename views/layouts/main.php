@@ -69,6 +69,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
+        <p>Последняя посещенная страница - <?= \Yii::$app->session->get('lastPage'); ?></p>
         <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
