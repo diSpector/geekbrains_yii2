@@ -10,6 +10,8 @@ namespace app\controllers;
 
 use app\base\BaseController;
 use app\controllers\actions\ActivityCreateAction;
+use yii\helpers\ArrayHelper;
+
 //use app\models\Activity;
 
 class ActivityController extends BaseController
@@ -22,6 +24,17 @@ class ActivityController extends BaseController
 //                'class' => 'app\controllers\actions\ActivityCreateAction'
             ]
         ];
+    }
+
+    public function actionArray(){
+//        $arr=['first'=>['twos'=>'value'],'key'=>'value_key'];
+
+        $arr=[['id'=>2,'name'=>'Petr'],['id'=>1,'name'=>'Elena']];
+
+        $value=ArrayHelper::map($arr,function ($arr){
+            return ArrayHelper::getValue($arr,'id');
+        },'name');
+        print_r($value);
     }
 //    public function actionCreate()
 //    {

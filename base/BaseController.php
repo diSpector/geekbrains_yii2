@@ -8,7 +8,7 @@ class BaseController extends \yii\web\Controller
     {
         // последняя сохраненная страница выводится в футере над копирайтом
         $session = \Yii::$app->session;
-        $session->open();
+//        $session->open();
         $session->set('lastPage', \Yii::$app->request->absoluteUrl); // записать в ключ lastPage сессии адрес страницы
         return parent::afterAction($action, $result); //
     }
