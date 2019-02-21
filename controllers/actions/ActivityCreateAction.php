@@ -19,8 +19,8 @@ class ActivityCreateAction extends Action
         if (\Yii::$app->request->isPost) {
             $activity = $comp->getModel(\Yii::$app->request->post());
 
-            $activity['is_blocked'] = $activity['is_blocked'] === '0' ? 'Нет' : 'Да';
-            $activity['is_repeated'] = $activity['is_repeated'] === '0' ? 'Нет' : 'Да';
+//            $activity['is_blocked'] = $activity['is_blocked'] === '0' ? 'Нет' : 'Да';
+//            $activity['is_repeated'] = $activity['is_repeated'] === '0' ? 'Нет' : 'Да';
             $comp->createActivity($activity);
             return $this->controller->render('create-confirm', ['activity' => $activity]);
 
