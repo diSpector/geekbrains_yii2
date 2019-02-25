@@ -39,8 +39,6 @@ class Activity extends Model
             [['title', 'description', 'timeStart', 'timeEnd', 'dateAct'], 'required'],
             [['is_blocked', 'is_repeated', 'use_notification'], 'boolean'],
             [['images'], 'file', 'extensions' => 'jpg, png', 'maxFiles' => 4],
-//            [['images'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4],
-//            ['dateAct', 'date', 'format' => 'php:d-m-Y', 'timestampAttribute' => 'dateAct'],
             ['dateAct', 'date', 'format' => 'php:d-m-Y'],
             ['timeStart', CorrectTimeStart::class], // время начала события д.б. больше текущего времени
             ['timeEnd', CorrectTimeRule::class], // время окончания события д.б. больше времени начала
