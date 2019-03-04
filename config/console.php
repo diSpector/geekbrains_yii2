@@ -1,7 +1,10 @@
 <?php
 
 $params = require __DIR__ . '/params.php';
-$db = require __DIR__ . '/db.php';
+//$db = require __DIR__ . '/db.php';
+$db = file_exists(__DIR__ . '/db.php')
+    ? (require __DIR__ . '/db_local.php')
+    : (__DIR__ . '/db.php');
 
 $config = [
     'id' => 'basic-console',
@@ -16,6 +19,9 @@ $config = [
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager'
         ],
         'log' => [
             'targets' => [
